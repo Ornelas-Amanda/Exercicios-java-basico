@@ -1,0 +1,40 @@
+package teste;
+
+import java.util.Locale;
+
+import javax.swing.JOptionPane;
+
+public class exeSalario {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		double soma = 0;
+		double[] salario = new double[12];
+		String[] mes = new String[12];
+		String mesMax = null;
+		String mesMin = null;
+		;
+		for (int i = 0; i < salario.length; i++) {
+			salario[i] = Integer.parseInt(JOptionPane.showInputDialog(null, "informe salario"));
+			mes[i] = JOptionPane.showInputDialog(null, "informe mes referente:");
+			soma = soma + salario[i];
+		}
+		double mediaSalario = soma / 12;
+		double salarioMin = salario[0];
+		double salarioMax = salario[0];
+		for (int i = 0; i < salario.length; i++) {
+			if (salario[i] <= salarioMin) {
+				salarioMin = salario[i];
+				mesMin = mes[i];
+			} else {
+				if (salario[i] >= salarioMax) {
+					salarioMax = salario[i];
+					mesMax = mes[i];
+				}
+			}
+		}
+		JOptionPane.showMessageDialog(null,
+				"Em 12 meses seu redimento total é: " + soma + "\nSeu maior salario foi " + salarioMax + " do mes "
+						+ mesMax + "\nSeu menor salario foi: " + salarioMin + "do mes: " + mesMin
+						+ "\nA media salarial é :" + mediaSalario);
+	}

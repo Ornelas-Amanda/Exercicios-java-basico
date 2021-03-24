@@ -1,0 +1,36 @@
+package teste;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Area {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner in = new Scanner(System.in);
+		double pi = 3.14159;
+		double a, b, c;
+
+		System.out.print("digite tres valores: ");
+		a = in.nextDouble();
+		b = in.nextDouble();
+		c = in.nextDouble();
+
+		double areaTriangulo = a * c / 2;
+
+		double areaCirculo = pi * Math.pow(c, 2);
+
+		double areaTrapezio = (a + b) * c / 2;
+
+		double areaQuadrado = Math.pow(b, 2);
+
+		double areaRetangulo = a * b;
+
+		String result = String.format(
+				"TRIANGULO: %.3f \n CIRCULO: %.3f \n TRAPEZIO: %.3f \n QUADRADO: %.3f \n RETANGULO: %.3f",
+				areaTriangulo, areaCirculo, areaTrapezio, areaQuadrado, areaRetangulo);
+		System.out.println(result);
+		in.close();
+	}
+
+}

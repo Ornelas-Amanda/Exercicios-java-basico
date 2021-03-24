@@ -1,0 +1,54 @@
+package teste;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class codigo {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner in = new Scanner(System.in);
+		int codigo;
+		String lanche;
+		Double preco,qtde;
+		System.out.println("digite o codigo do lanche");
+		codigo = in.nextInt();
+		System.out.println();
+		System.out.println("Quantidade do produto?");
+		qtde = in.nextDouble();
+		
+		switch(codigo) {
+		case 1:
+			lanche ="Cachorro-quente";
+			preco= 4.00*qtde;
+			break;
+		case 2:
+			lanche ="X-Salada";
+			preco = 4.50*qtde;
+			break;
+		case 3:
+			lanche = "X-Bacon";
+			preco = 5.00*qtde;
+			break;
+		case 4 :
+			lanche = "Torrada Simples";
+			preco = 2.00*qtde;
+			break;
+		case 5:
+			lanche="Refrigerante";
+			preco = 1.50*qtde;
+			break;
+			default:
+				lanche = "codigo invalido";
+				preco = 0.00;
+				break;		
+		}
+		
+		System.out.printf("Lanche: %s \n Total:R$ %.2f",lanche,preco);
+		
+		
+		
+in.close();
+	}
+
+}

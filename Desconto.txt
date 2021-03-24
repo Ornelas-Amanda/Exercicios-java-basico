@@ -1,0 +1,32 @@
+package teste;
+
+import java.util.Locale;
+
+import javax.swing.JOptionPane;
+
+public class exeDesconto {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		String entrada = JOptionPane.showInputDialog(null, "Insira um valor de produto");
+		int valor = Integer.parseInt(entrada);
+		String Des = JOptionPane.showInputDialog(null, "deseja pagar a vista?" + "\nsim" + "  nao");
+
+		switch (Des) {
+		case "sim":
+                  String desconto = JOptionPane.showInputDialog(null, "Insira o valor da porcentagem: ");
+		   des = Float.parseFloat(desconto);
+			valor -= valor *( des/100);
+			JOptionPane.showMessageDialog(null, "pagando a vista, sera pago com desconto o valor de : " + valor);
+			break;
+		case "nao":
+			valor += 0;
+			JOptionPane.showMessageDialog(null, "sem desconto, valor a ser pago de :" + valor);
+			break;
+		default:
+			String resp = "Resposta invalida";
+			JOptionPane.showMessageDialog(null, resp);
+			break;
+		}
+	}
+}

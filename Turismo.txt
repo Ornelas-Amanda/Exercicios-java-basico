@@ -1,0 +1,48 @@
+package teste;
+
+import java.util.Locale;
+
+import javax.swing.JOptionPane;
+
+public class exeTurismo {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		float valorTotal = 0;
+		String local = JOptionPane.showInputDialog(null,
+				"Deseja visitar qual destino: " + "\n Ilhabela " + " ou " + "Fernando de noronha");
+		String dias = JOptionPane.showInputDialog(null, "Quantos dias deseja ficar?");
+		int days = Integer.parseInt(dias);
+
+		switch (local.toLowerCase()) {
+		case "Ilhabela":
+			if (days >= 2 || days <= 5) {
+				valorTotal = 240 * days;
+			} else {
+				if (days >= 6 || days <= 10) {
+					valorTotal = (220 * days) + 130;
+				} else {
+					valorTotal = (210 * days) + 150;
+				}
+			}
+			break;
+		case "Fernando de noronha":
+			if (days >= 2 || days <= 5) {
+				valorTotal = (400 * days) + 100;
+			} else {
+				if (days >= 6 || days <= 10) {
+					valorTotal = (410 * days) + 150;
+				} else {
+					valorTotal = (420 * days) + 200;
+				}
+			}
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "invalido, escreva corretamente.");
+			break;
+		}
+		JOptionPane.showMessageDialog(null,
+				"Seu destino para: " + local + " por um perido de :" + days + " dias, custara: " + valorTotal);
+	}
+
+}
